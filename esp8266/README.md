@@ -10,7 +10,7 @@ I dont update his page with those instructions because its duplicating effort. J
 
 Windows can flash these modules with https://github.com/nodemcu/nodemcu-flasher. 
 
-YOU NEED BOTH FIRMWARE FILES. Dont ask which one to flash. Its both and at the the addresses in the firmware. 
+YOU NEED BOTH FIRMWARE FILES. Dont ask which one to flash. Its both and at the the addresses in the firmware file names. 
 
 2. Then follow the instructions on the esp_slip_router page to setup you wifi settings.
 
