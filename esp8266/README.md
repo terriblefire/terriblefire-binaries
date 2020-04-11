@@ -1,4 +1,4 @@
-
+Roadshow is the supported TCP/IP stack
 
 1. Flash the firmware here to your esp module using a programmer interface and software like esptool.py
 
@@ -27,3 +27,8 @@ The ESP will have an IP address on your LAN/WIFI network that it obtains by DHCP
 Dont bother looking for other slip.device's etc. Its utterly pointless unless you hit an issue between your ESP and your Amiga. SLIP is about as simple as possible and drivers arent going to make much of a difference to the performance. 
 
 Since we have reports that 115200 works on CD32 i've updated the baud rate settings in the script but if you are using an A500 and doing this with a different type of machine you may want to try 38400. 
+
+For MiamiDX follow this guide. 
+
+https://hackaday.com/2019/07/03/amiga-in-the-mist-gets-online-with-an-esp8266/
+
