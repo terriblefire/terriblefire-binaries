@@ -1,0 +1,38 @@
+; (C) 2028 Stephen J. Leary 
+; Make this better. 
+;
+
+echo "Removing old slip.device"
+IF EXISTS DEVS:Networks/slip.device
+	delete DEVS:Networks/slip.device
+EndIf
+
+echo "Installing slip.device"
+lha -q x cslip-sana2.lha ram:
+copy QUIET ram:slip/slip.device DEVS:Networks/
+
+IF NOT EXISTS ENVARC:Sana2
+	echo "Creating SANA2 Config folder"
+	MAKEDIR ENVARC:Sana2
+ENDIF 
+
+echo "Creating slip0.config" 
+echo >envarc:Sana2/slip0.config "# Auto generated file" 
+echo >>envarc:Sana2/slip0.config "serial.device 0 115200 192.168.240.2"
+
+echo "Create network interface"
+echo >devs:NetInterfaces/Slip "# $VER: SLIP 1.1 (1.4.2020)"
+echo >>Devs:NetInterfaces/Slip "interface=Slip"
+echo >>devs:NetInterfaces/Slip "device=slip.device"
+echo >>devs:NetInterfaces/Slip "unit=0"
+echo >>devs:NetInterfaces/Slip "address=192.168.240.2"
+echo >>devs:NetInterfaces/Slip "netmask=255.255.255.0"
+echo >>devs:NetInterfaces/Slip "requiresinitdelay=no"
+
+echo "Create routes file"
+echo >Devs:Internet/Routes default 192.168.240.1
+
+
+echo "Create name_resolution file"
+echo >Devs:Internet/name_resolution nameserver 8.8.8.8
+
