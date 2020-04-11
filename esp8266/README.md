@@ -26,6 +26,8 @@ The ESP will have an IP address on your LAN/WIFI network that it obtains by DHCP
 
 Dont bother looking for other slip.device's etc. Its utterly pointless unless you hit an issue between your ESP and your Amiga. SLIP is about as simple as possible and drivers arent going to make much of a difference to the performance. 
 
+You will never exceed around 10k/s with this setup. I toyed with the idea of making a 256KBaud UART in the TF360 but there are are other priorities. 
+
 Since we have reports that 115200 works on CD32 i've updated the baud rate settings in the script but if you are using an A500 and doing this with a different type of machine you may want to try 38400. 
 
 For MiamiDX follow this guide. 
