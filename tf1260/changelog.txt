@@ -1,0 +1,2 @@
+2023-05-19: 68090 version. Final version. Major fixes. 
+2021-12-17: Xmas firmware. Major improvement over shipped verison 
